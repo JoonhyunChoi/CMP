@@ -39,6 +39,7 @@ public class MemberDao {
 				//Member(String userId, String userPwd, String userName, String phone, char gender, String email) {
 			Member memberTemp = new Member(sArr[0].trim(), sArr[1].trim(), sArr[2].trim(), sArr[3].trim(), sArr[4].trim().charAt(0), sArr[5].trim());
 			
+			
 			members.add(memberTemp);
 			}
 			
