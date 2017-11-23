@@ -13,12 +13,13 @@ import javax.swing.JTextField;
 
 public class SearchIdView {
 	public void SearchId(){
-		JFrame mf = new JFrame();
+		JPanel mp = new JPanel();
+		
 		JPanel panel = new JPanel();
 		
 	
-		mf.setBounds(700, 400,600,200);
-		mf.setTitle("아이디 찾기");
+		mp.setBounds(700, 400,600,200);
+		mp.setTitle("아이디 찾기");
 		panel.setLayout(null);
 		
 		//이름 라벨
@@ -81,12 +82,12 @@ public class SearchIdView {
 		panel.add(resultIdT);
 		
 				
-		mf.add(panel);
+		mp.add(panel);
 				
-		mf.setVisible(true);
-		mf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-}
+		mp.setVisible(true);
+		mp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-}
+
+
 	}
 }
