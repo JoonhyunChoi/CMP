@@ -1,10 +1,14 @@
 package view;
 
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.*;
-
+	
 public class SeatReserve extends JPanel{
+	JButton[][] seat = new JButton[12][20];
+	
 	public SeatReserve(){
 		this.setSize(1280, 720);
 		this.setLayout(null);
@@ -14,12 +18,13 @@ public class SeatReserve extends JPanel{
 		
 		//페이지 제목
 		JLabel label = new JLabel("좌석/인원선택");
-		label.setBounds(50, 50, 500, 50);
+		label.setBounds(50, 50, 400, 50);
 		label.setFont(new Font("SamsSerif", Font.PLAIN, 50));
 		this.add(label);
 				
 		//좌석 표시
-		JButton[][] seat = new JButton[12][20];	
+		JButton selseat = new JButton();
+		selseat.setBackground(Color.RED);
 		int term = 30;
 		int x = 0;
 		int y = 0;
@@ -38,9 +43,20 @@ public class SeatReserve extends JPanel{
 					this.add(seatl);
 					seatl.setBounds(x + (j * term) + 5, y - term, 20, 20);
 				}
-				this.add(seat[i][j] = new JButton());					
-				seat[i][j].setBounds(x + (j * term), y + (i * term), 20, 20);	
-				
+				this.add(seat[i][j] = new JButton());
+				seat[i][j].setBackground(Color.GRAY);
+				seat[i][j].setBounds(x + (j * term), y + (i * term), 20, 20);
+				seat[i][j].addMouseListener(new MouseAdapter(){
+					@Override
+					public void mouseEntered(MouseEvent e) {
+						e.getComponent().setBackground(Color.BLACK);
+					}
+					@Override
+					public void mouseExited(MouseEvent e) {
+						e.getComponent().setBackground(Color.GRAY);
+					}
+					
+				});
 			}
 		}
 		
